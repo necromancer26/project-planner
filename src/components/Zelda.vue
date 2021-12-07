@@ -27,7 +27,7 @@ export default defineComponent({
   },
   setup(props) {
     const state = reactive({
-      name: "?",
+      name: "?" as string,
       age: "?" as number | string,
     });
     return {

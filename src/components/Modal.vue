@@ -5,28 +5,40 @@
       <p>{{ msg }}</p>
       <slot>default content (if no slot passed in)</slot>
       <div class="actions">
-        <slot name="links"></slot>
+        <!-- <slot name="links"></slot> -->
       </div>
     </div>
   </div>
 </template>
-<script lang="ts">
-import { toRefs, reactive } from "vue";
-export default {
-  props: ["title", "msg"],
-  methods: {
-    closeModal() {
-      this.$emit("close");
-    },
-  },
-  setup(props) {
-    const state = reactive({ firstName: "Zelda" as string });
-    console.log({ ...props });
 
-    return { ...toRefs(state) }; // anything returned here will be available for the rest of the component
-  },
-};
+
+<script lang="ts" setup>
+import { toRefs, reactive, defineEmits, defineProps, withDefaults } from "vue";
+interface Props { title: string, msg: string, theme: string }
+const props = withDefaults(defineProps<Props>(), { title: "title", msg: "message", theme: "sale" })
+const closeModal = (): void => { emit("close") }
+const emit = defineEmits(["close"])
+const state = reactive({ firstName: "Zelda" as string, })
+// export default {
+//   props: ["title", "msg", "theme"],
+//   methods: {
+//     closeModal() {
+       // this.$emit("close");
+//       emit("close");
+//       console.log("closed");
+
+//     },
+//   },
+//   setup(props: any) {
+//     const emit = defineEmits(["close"])
+//     const state = reactive({ firstName: "Zelda" as string });
+//     console.log({ ...props });
+
+//     return { ...toRefs(state) }; // anything returned here will be available for the rest of the component
+//   },
+// };
 </script>
+
 <style lang="scss">
 .modal {
   width: 400px;
