@@ -1,11 +1,16 @@
 <template>
-  <div class="home">home</div>
+  <Home />
+  <AddProject />
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" >
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-
+import Home from "./views/Home.vue"
+export default {
+  name: "App",
+  components: { Home },
+}
 </script>
 
 <style>
