@@ -1,6 +1,9 @@
 <template>
-  <Home />
-  <AddProject />
+<nav>
+  <router-link to="/"> Home</router-link>
+    <router-link to="/add"> Add Project</router-link>
+</nav>
+<router-view/>
 </template>
 
 <script lang="ts" >
@@ -14,17 +17,15 @@ export default {
 </script>
 
 <style>
+body {
+  background: #f2f2f2;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-h1 {
-  border-bottom: 1px solid #ddd;
-  display: inline-block;
-  padding-bottom: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #555;
 }
 </style>
