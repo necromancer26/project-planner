@@ -24,7 +24,7 @@ export default {
         complete: false,
         id: Math.floor(Math.random() * 10000)
       }
-      console.log(project)
+      // console.log(project)
   
      fetch('http://localhost:3000/projects', {
         method: 'POST',

@@ -11,6 +11,12 @@
       "title": "Make marketing email",
       "details": "Lorem ipsum",
       "complete": false
+    },
+    {
+      "title": "Get online certifications",
+      "details": "aws, redhat, ccna...",
+      "complete": false,
+      "id": 2911
     }
   ]
 }

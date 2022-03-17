@@ -28,7 +28,6 @@ export default {
       .then(data => {
         this.title = data.title
         this.details = data.details
-        console.log("done");
       }).catch(err => console.log(err))
   },
   methods: {
